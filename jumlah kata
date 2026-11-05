@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class JumlahKata{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan kalimat:");
+        String kalimat = input.nextLine();
+        String[] kata = kalimat.trim().split("\\s+");
+        int jumlah = 0;
+        if(!kalimat.trim().isEmpty()){
+            jumlah = kata.length;
+        }
+        System.out.println("jumlah kata:" + jumlah);
+        input.close();
+    }
+}
