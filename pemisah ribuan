@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class PemisahRibuan{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan angka:");
+        long angka = input.nextLong();
+        StringBuilder hasil = new StringBuilder(String.valueOf(angka));
+        int batas = 0;
+        if(hasil.charAt(0) == '-'){
+            batas = 1;
+        }
+        for(int i = hasil.length() - 3; i > batas; i = i - 3){
+            hasil.insert(i, ".");
+        }
+        System.out.println("hasil:" + hasil);
+        input.close();
+    }
+}
