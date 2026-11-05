@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class HapusSpasi{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan kalimat:");
+        String kalimat = input.nextLine();
+        StringBuilder hasil = new StringBuilder(kalimat);
+        for(int i = 0; i < hasil.length(); i++){
+            if(hasil.charAt(i) == ' ') {
+                hasil.deleteCharAt(i);
+                i--;
+            }
+        }
+        System.out.println("hasil setelah spasi dihapus:" + hasil);
+        input.close();
+    }
+}
