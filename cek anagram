@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class CekAnagram{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan kata pertama:");
+        String kata1 = input.nextLine().toLowerCase().replace(" ","");
+        System.out.print("Masukkan kata kedua: ");
+        String kata2 = input.nextLine().toLowerCase().replace(" ","");
+        boolean anagram = true;
+        if(kata1.length() != kata2.length()){
+            anagram = false;
+        } else{
+            boolean[] dipakai = new boolean[kata2.length()];
+            for(int i = 0; i < kata1.length(); i++){
+                boolean ketemu = false;
+                for(int j = 0; j < kata2.length(); j++){
+                    if(kata1.charAt(i) == kata2.charAt(j) && !dipakai[j]){
+                        dipakai[j] = true;
+                        ketemu = true;
+                        break;
+                    }
+                }
+                if(!ketemu){
+                    anagram = false;
+                    break;
+                }
+            }
+        }
+        if(anagram){
+            System.out.println("kedua kata merupakan anagram");
+        } else {
+            System.out.println("kedua kata bukan anagram");
+        }
+        input.close();
+    }
+}
