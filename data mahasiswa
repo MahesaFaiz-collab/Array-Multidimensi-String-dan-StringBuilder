@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class DataMahasiswa{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        String[] prodi = {"sistem informasi","arsitektur","matematika"};
+        String[] kelas = {"a","b","c"};
+        String[][][] mahasiswa = new String[3][3][5];
+        // Input nama mahasiswa
+        for(int i = 0; i < 3; i++){
+            System.out.println("\nProgram Studi:" + prodi[i]);
+            for(int j = 0; j < 3; j++){
+                System.out.println("\nKelas" + kelas[j]);
+                for(int k = 0; k < 5; k++){
+                    System.out.print("nama mahasiswa ke" + (k+1) +" : ");
+                    mahasiswa[i][j][k] = input.nextLine();
+                }
+            }
+        }
+        // Menampilkan data mahasiswa
+        System.out.println("\n===== DATA MAHASISWA =====");
+        for(int i = 0; i < 3; i++){
+            System.out.println("\nProgram Studi:" + prodi[i]);
+            for(int j = 0; j < 3; j++){
+                System.out.println("\nKelas" + kelas[j]);
+                for(int k = 0; k < 5; k++) {
+                    System.out.println((k+1) +". " + mahasiswa[i][j][k]);
+                }
+            }
+        }
+        input.close();
+    }
+}
