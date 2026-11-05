@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double[][] nilai = new double[3][4];
+        double rata;
+        for(int i = 0; i < 3; i++) {
+            System.out.println("\nMahasiswa ke" + (i+1));
+            for(int j = 0; j < 4; j++) {
+                System.out.print("masukkan nilai mata kuliah ke" + (j+1) +" : ");
+                nilai[i][j] = input.nextDouble();
+            }
+        }
+        System.out.println("\n===== HASIL NILAI MAHASISWA =====");
+        for(int i = 0; i < 3; i++) {
+            double total = 0;
+            for(int j = 0; j < 4; j++) {
+                total = total + nilai[i][j];
+            }
+            rata = total / 4;
+            System.out.println("mahasiswa ke" + (i+1));
+            System.out.println("rata-rata nilai:" + rata);
+        }
+        input.close();
+    }
+}
