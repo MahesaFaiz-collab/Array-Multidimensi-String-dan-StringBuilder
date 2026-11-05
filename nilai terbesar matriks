@@ -1,0 +1,28 @@
+public class NilaiTerbesarMatriks {
+    public static void main(String[] args) {
+        int[][] angka = {
+            {10, 25, 30},
+            {45, 80, 15},
+            {20, 35, 60}
+        };
+        int terbesar = angka[0][0];
+        int baris = 0;
+        int kolom = 0;
+        System.out.println("matriks:");
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                System.out.print(angka[i][j] +" ");
+
+                if(angka[i][j] > terbesar) {
+                    terbesar = angka[i][j];
+                    baris = i;
+                    kolom = j;
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("\nNilai terbesar:" + terbesar);
+        System.out.println("posisi baris:" + (baris + 1));
+        System.out.println("posisi kolom:" + (kolom + 1));
+    }
+}
