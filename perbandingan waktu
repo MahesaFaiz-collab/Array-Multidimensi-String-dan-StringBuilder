@@ -1,0 +1,23 @@
+public class PerbandinganWaktu{
+    public static void main(String[] args){
+        String hasil = "";
+        long mulai = System.nanoTime();
+        for(int i = 1; i <= 100000; i++){
+            hasil += i;
+        }
+        long selesai = System.nanoTime();
+        long waktuString = selesai - mulai;
+        StringBuilder sb = new StringBuilder();
+        long mulai2 = System.nanoTime();
+        for(int i = 1; i <= 100000; i++){
+            sb.append(i);
+        }
+        long selesai2 = System.nanoTime();
+        long waktuBuilder = selesai2 - mulai2;
+        System.out.println("===== HASIL PERBANDINGAN =====");
+        System.out.println("string +=:" + (waktuString / 1000000.0) +" ms");
+        System.out.println("StringBuilder:" + (waktuBuilder / 1000000.0) +" ms");
+        System.out.println("\nPanjang String:" + hasil.length());
+        System.out.println("panjang StringBuilder:" + sb.length());
+    }
+}
